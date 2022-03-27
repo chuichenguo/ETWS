@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../lib/include/srslte/asn1/asn1_utils.h
+algorithm
+-
+array
+-
+cmath
+-
+cstring
+-
+limits
+-
+map
+-
+sstream
+-
+stdarg.h
+-
+stdint.h
+-
+string
+-
+vector
+-
+
+../lib/include/srslte/asn1/s1ap_asn1.h
+asn1_utils.h
+../lib/include/srslte/asn1/asn1_utils.h
+cstdio
+-
+stdarg.h
+-
+
+/home/kuo/srsLTE_20_10_1/srsRAN/lib/src/asn1/s1ap_asn1.cc
+srslte/asn1/s1ap_asn1.h
+/home/kuo/srsLTE_20_10_1/srsRAN/lib/src/asn1/srslte/asn1/s1ap_asn1.h
+sstream
+-
+

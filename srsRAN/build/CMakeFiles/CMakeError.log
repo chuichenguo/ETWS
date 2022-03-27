@@ -1,0 +1,166 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_10e21/fast"
+/usr/bin/make -f CMakeFiles/cmTC_10e21.dir/build.make CMakeFiles/cmTC_10e21.dir/build
+make[1]: Entering directory '/home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_10e21.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_10e21.dir/CheckSymbolExists.c.o   -c /home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_10e21
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_10e21.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_10e21.dir/CheckSymbolExists.c.o  -o cmTC_10e21 
+CMakeFiles/cmTC_10e21.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_10e21.dir/build.make:97: recipe for target 'cmTC_10e21' failed
+make[1]: *** [cmTC_10e21] Error 1
+make[1]: Leaving directory '/home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_10e21/fast' failed
+make: *** [cmTC_10e21/fast] Error 2
+
+File /home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2a84a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2a84a.dir/build.make CMakeFiles/cmTC_2a84a.dir/build
+make[1]: Entering directory '/home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2a84a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_2a84a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_2a84a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2a84a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_2a84a.dir/CheckFunctionExists.c.o  -o cmTC_2a84a -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_2a84a.dir/build.make:97: recipe for target 'cmTC_2a84a' failed
+make[1]: *** [cmTC_2a84a] Error 1
+make[1]: Leaving directory '/home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_2a84a/fast' failed
+make: *** [cmTC_2a84a/fast] Error 2
+
+
+Performing C++ SOURCE FILE Test UHD_ENABLE_X300_FW_RESET failed with the following output:
+Change Dir: /home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8e249/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8e249.dir/build.make CMakeFiles/cmTC_8e249.dir/build
+make[1]: Entering directory '/home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8e249.dir/src.cxx.o
+/usr/bin/c++    -DUHD_ENABLE_X300_FW_RESET  -L/usr/lib/x86_64-linux-gnu   -o CMakeFiles/cmTC_8e249.dir/src.cxx.o -c /home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_8e249
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e249.dir/link.txt --verbose=1
+/usr/bin/c++   -DUHD_ENABLE_X300_FW_RESET  -L/usr/lib/x86_64-linux-gnu    -rdynamic CMakeFiles/cmTC_8e249.dir/src.cxx.o  -o cmTC_8e249 -luhd -lboost_program_options -lboost_system 
+CMakeFiles/cmTC_8e249.dir/src.cxx.o: In function `try_usrp_x300_reset()':
+src.cxx:(.text+0xd5): undefined reference to `x300_make_ctrl_iface_enet(boost::shared_ptr<uhd::transport::udp_simple>, bool)'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_8e249.dir/build.make:97: recipe for target 'cmTC_8e249' failed
+make[1]: *** [cmTC_8e249] Error 1
+make[1]: Leaving directory '/home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_8e249/fast' failed
+make: *** [cmTC_8e249/fast] Error 2
+
+Source file was:
+#include <uhd.h>
+    #include <uhd/usrp/multi_usrp.hpp>
+    #include <uhd/transport/udp_simple.hpp>
+
+    uhd::wb_iface::sptr x300_make_ctrl_iface_enet(uhd::transport::udp_simple::sptr udp, bool enable_errors);
+
+    uhd_error try_usrp_x300_reset()
+    {
+      uhd::transport::udp_simple::sptr udp_simple = uhd::transport::udp_simple::make_connected("", "49152");
+      uhd::wb_iface::sptr x300_ctrl = x300_make_ctrl_iface_enet(udp_simple, true);
+      x300_ctrl->poke32(0x100058, 1);
+      return UHD_ERROR_NONE;
+    }
+
+    int main(int argc, char** argv)
+    {
+      try_usrp_x300_reset();
+      return 0;
+    }
+Performing C++ SOURCE FILE Test UHD_ENABLE_CUSTOM_RFNOC failed with the following output:
+Change Dir: /home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_52bc0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_52bc0.dir/build.make CMakeFiles/cmTC_52bc0.dir/build
+make[1]: Entering directory '/home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_52bc0.dir/src.cxx.o
+/usr/bin/c++    -DUHD_ENABLE_CUSTOM_RFNOC  -L/usr/lib/x86_64-linux-gnu   -o CMakeFiles/cmTC_52bc0.dir/src.cxx.o -c /home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp/src.cxx
+/home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp/src.cxx:3:14: fatal error: uhd/rfnoc/ddc_ch2_block_ctrl.hpp: No such file or directory
+     #include <uhd/rfnoc/ddc_ch2_block_ctrl.hpp>
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+CMakeFiles/cmTC_52bc0.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_52bc0.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_52bc0.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_52bc0/fast' failed
+make: *** [cmTC_52bc0/fast] Error 2
+
+Source file was:
+#include <uhd.h>
+    #include <uhd/device3.hpp>
+    #include <uhd/rfnoc/ddc_ch2_block_ctrl.hpp>
+
+    static uhd::device3::sptr device3;
+    static uhd::rfnoc::ddc_ch2_block_ctrl::sptr ddc_ctrl;
+
+    uhd_error try_device3_ddc_ch2_ctrl()
+    {
+      ddc_ctrl = device3->get_block_ctrl<uhd::rfnoc::ddc_ch2_block_ctrl>(uhd::rfnoc::block_id_t("DDCch2_0"));
+      return UHD_ERROR_NONE;
+    }
+
+    int main(int argc, char** argv)
+    {
+      try_device3_ddc_ch2_ctrl();
+      return 0;
+    }
+Performing C SOURCE FILE Test HAVE_AVX512 failed with the following output:
+Change Dir: /home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0dc7d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0dc7d.dir/build.make CMakeFiles/cmTC_0dc7d.dir/build
+make[1]: Entering directory '/home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0dc7d.dir/src.c.o
+/usr/bin/cc   -Wno-unused-but-set-variable -DHAVE_AVX512 -mavx512f -mavx512cd -mavx512bw -mavx512dq -DLV_HAVE_AVX512   -o CMakeFiles/cmTC_0dc7d.dir/src.c.o   -c /home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_0dc7d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0dc7d.dir/link.txt --verbose=1
+/usr/bin/cc  -Wno-unused-but-set-variable -DHAVE_AVX512 -mavx512f -mavx512cd -mavx512bw -mavx512dq -DLV_HAVE_AVX512    -rdynamic CMakeFiles/cmTC_0dc7d.dir/src.c.o  -o cmTC_0dc7d 
+make[1]: Leaving directory '/home/kuo/srsLTE_20_10_1/srsRAN/build/CMakeFiles/CMakeTmp'
+
+Return value: FAILED_TO_RUN
+Source file was:
+
+          #include <immintrin.h>
+          int main()
+          {
+            __m512i a, b, c;
+            const int src[16] = { 0x0, 0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8 , 0x9, 0xA, 0xB, 0xC, 0xD, 0xE, 0xF};
+            int dst[16];
+            a =  _mm512_loadu_si512( (__m512i*)src );
+            b =  _mm512_loadu_si512( (__m512i*)src );
+            c = _mm512_add_epi32( a, b );
+            _mm512_storeu_si512( (__m512i*)dst, c );
+            int i = 0;
+            for( i = 0; i < 16; i++ ){
+              if( ( src[i] + src[i] ) != dst[i] ){
+                return -1;
+              }
+            }
+            return 0;
+          }

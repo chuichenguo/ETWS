@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../lib/include/srslte/config.h
+
+../lib/include/srslte/phy/dft/dft.h
+srslte/config.h
+../lib/include/srslte/phy/dft/srslte/config.h
+stdbool.h
+-
+
+../lib/include/srslte/phy/utils/vector.h
+srslte/config.h
+../lib/include/srslte/phy/utils/srslte/config.h
+math.h
+-
+stdint.h
+-
+stdio.h
+-
+
+/home/kuo/srsLTE_20_10_1/srsRAN/lib/src/phy/utils/test/dft_test.c
+complex.h
+-
+math.h
+-
+stdio.h
+-
+stdlib.h
+-
+strings.h
+-
+time.h
+-
+unistd.h
+-
+srslte/phy/dft/dft.h
+/home/kuo/srsLTE_20_10_1/srsRAN/lib/src/phy/utils/test/srslte/phy/dft/dft.h
+srslte/phy/utils/vector.h
+/home/kuo/srsLTE_20_10_1/srsRAN/lib/src/phy/utils/test/srslte/phy/utils/vector.h
+

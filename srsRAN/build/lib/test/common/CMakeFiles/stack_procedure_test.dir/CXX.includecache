@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../lib/include/srslte/adt/move_callback.h
+cstddef
+-
+cstdint
+-
+cstdio
+-
+cstdlib
+-
+functional
+-
+stdint.h
+-
+type_traits
+-
+
+../lib/include/srslte/common/stack_procedure.h
+srslte/adt/move_callback.h
+../lib/include/srslte/common/srslte/adt/move_callback.h
+functional
+-
+list
+-
+memory
+-
+mutex
+-
+vector
+-
+
+/home/kuo/srsLTE_20_10_1/srsRAN/lib/test/common/stack_procedure_test.cc
+srslte/common/stack_procedure.h
+/home/kuo/srsLTE_20_10_1/srsRAN/lib/test/common/srslte/common/stack_procedure.h
+iostream
+-
+

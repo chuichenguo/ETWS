@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../lib/include/srslte/config.h
+
+../lib/include/srslte/phy/utils/random.h
+srslte/config.h
+../lib/include/srslte/phy/utils/srslte/config.h
+inttypes.h
+-
+stdbool.h
+-
+
+/home/kuo/srsLTE_20_10_1/srsRAN/lib/src/phy/utils/random.cpp
+srslte/phy/utils/random.h
+/home/kuo/srsLTE_20_10_1/srsRAN/lib/src/phy/utils/srslte/phy/utils/random.h
+complex
+-
+random
+-
+

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsrslte_mac.a  CMakeFiles/srslte_mac.dir/pdu.cc.o CMakeFiles/srslte_mac.dir/pdu_queue.cc.o
+/usr/bin/ranlib libsrslte_mac.a
